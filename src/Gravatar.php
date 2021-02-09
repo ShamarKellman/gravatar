@@ -23,7 +23,7 @@ class Gravatar
     /**
      * Set the avatar size to use.
      *
-     * @param  integer  $size
+     * @param  int  $size
      * @return Gravatar
      *
      * @throws InvalidArgumentException
@@ -52,7 +52,7 @@ class Gravatar
             return $this->url.str_repeat('0', 32).$this->buildParams();
         }
 
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new InvalidEmailException('Please use a valid email.');
         }
 
@@ -77,7 +77,7 @@ class Gravatar
             'd='.$this->getDefaultImage(),
         ];
 
-        if($this->getAlwaysForceDefaultImage()) {
+        if ($this->getAlwaysForceDefaultImage()) {
             $params[] = 'f=y';
         }
 
@@ -104,7 +104,7 @@ class Gravatar
      */
     public function setMaxRating(string $rating): Gravatar
     {
-        if (!in_array($rating, ['g', 'pg', 'r', 'x'])) {
+        if (! in_array($rating, ['g', 'pg', 'r', 'x'])) {
             throw new InvalidRatingException('Invalid rating specified, only "g", "pg", "r", or "x" are allowed to be used.');
         }
 
@@ -131,8 +131,8 @@ class Gravatar
      */
     public function setDefaultImage($image): Gravatar
     {
-        if (!filter_var($image, FILTER_VALIDATE_URL) &&
-            !in_array($image, ['404', 'mp', 'identicon', 'monsterid', 'wavatar', 'retro'], true)) {
+        if (! filter_var($image, FILTER_VALIDATE_URL) &&
+            ! in_array($image, ['404', 'mp', 'identicon', 'monsterid', 'wavatar', 'retro'], true)) {
             throw new InvalidDefaultImageException('The default image specified is not a recognized gravatar "default" and is not a valid URL');
         }
 

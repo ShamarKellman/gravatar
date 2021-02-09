@@ -54,7 +54,6 @@ class GravatarTest extends TestCase
 
     public function testMaxRating(): void
     {
-
         Gravatar::setMaxRating('pg');
 
         self::assertEquals('pg', Gravatar::getMaxRating());
@@ -129,14 +128,16 @@ class GravatarTest extends TestCase
 
     public function testBuildUrl(): void
     {
-        self::assertEquals('https://secure.gravatar.com/avatar/7905d373cfab2e0fda04b9e7acc8c879?s=80&amp;r=g&amp;d=mp',
+        self::assertEquals(
+            'https://secure.gravatar.com/avatar/7905d373cfab2e0fda04b9e7acc8c879?s=80&amp;r=g&amp;d=mp',
             Gravatar::buildGravatarURL('mail@mail.com')
         );
     }
 
     public function testBuildUrlWithEmptyEmail(): void
     {
-        self::assertEquals('https://secure.gravatar.com/avatar/00000000000000000000000000000000?s=80&amp;r=g&amp;d=mp',
+        self::assertEquals(
+            'https://secure.gravatar.com/avatar/00000000000000000000000000000000?s=80&amp;r=g&amp;d=mp',
             Gravatar::buildGravatarURL()
         );
     }
