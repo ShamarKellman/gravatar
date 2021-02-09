@@ -1,22 +1,21 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "shamarkellman/gravatar",
+    "description": "gravatar",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "shamarkellman",
+        "gravatar"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/shamarkellman/gravatar",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Shamar Kellman",
+            "email": "shamarkellman@hotmail.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "spatie/laravel-package-tools": "^1.1",
         "illuminate/contracts": "^8.0"
     },
     "require-dev": {
@@ -27,13 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src",
-            "Spatie\\Skeleton\\Database\\Factories\\": "database/factories"
+            "ShamarKellman\\Gravatar\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "ShamarKellman\\Gravatar\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "ShamarKellman\\Gravatar\\GravatarServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "Gravatar": "ShamarKellman\\Gravatar\\Facades\\Gravatar"
             }
         }
     },
