@@ -129,7 +129,7 @@ class GravatarTest extends TestCase
     public function testBuildUrl(): void
     {
         self::assertEquals(
-            'https://secure.gravatar.com/avatar/7905d373cfab2e0fda04b9e7acc8c879?s=80&amp;r=g&amp;d=mp',
+            'https://secure.gravatar.com/avatar/7905d373cfab2e0fda04b9e7acc8c879?s=80',
             Gravatar::buildGravatarURL('mail@mail.com')
         );
     }
@@ -137,7 +137,7 @@ class GravatarTest extends TestCase
     public function testBuildUrlWithEmptyEmail(): void
     {
         self::assertEquals(
-            'https://secure.gravatar.com/avatar/00000000000000000000000000000000?s=80&amp;r=g&amp;d=mp',
+            'https://secure.gravatar.com/avatar/00000000000000000000000000000000?s=80',
             Gravatar::buildGravatarURL()
         );
     }

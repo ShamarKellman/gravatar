@@ -73,9 +73,15 @@ class Gravatar
     {
         $params = [
             's='.$this->getAvatarSize(),
-            'r='.$this->getMaxRating(),
-            'd='.$this->getDefaultImage(),
         ];
+
+        if (isset($this->maxRating)) {
+            $params[] = 'r='.$this->getMaxRating();
+        }
+
+        if (isset($this->defaultImage)) {
+            $params[] = 'd='.$this->getDefaultImage();
+        }
 
         if ($this->getAlwaysForceDefaultImage()) {
             $params[] = 'f=y';
